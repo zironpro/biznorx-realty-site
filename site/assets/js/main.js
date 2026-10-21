@@ -12,6 +12,7 @@
   const themed = $$('[data-theme]');
   const mbar = $('[data-mbar]');
   const waFloat = $('.wa-float');
+  const parallax = reduced ? [] : $$('[data-parallax]');
 
   /* ---------------------------------------------- header theme, mobile bar */
   let ticking = false;
@@ -27,6 +28,11 @@
       if (r.top <= hh / 2 && r.bottom > hh / 2) { light = s.dataset.theme === 'light'; break; }
     }
     header.classList.toggle('is-light', light && !document.body.classList.contains('menu-open'));
+    // gentle parallax on full-bleed photos
+    for (const el of parallax) {
+      const r = el.parentElement.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < innerHeight) el.style.transform = `translate3d(0,${(r.top * -0.12).toFixed(1)}px,0)`;
+    }
     const showAfter = journey ? journey.offsetTop + journey.offsetHeight - innerHeight * 0.5 : innerHeight * 0.5;
     const nearEnd = y + innerHeight > document.documentElement.scrollHeight - 140;
     const show = y > showAfter && !nearEnd;

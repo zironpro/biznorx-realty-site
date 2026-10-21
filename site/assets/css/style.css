@@ -612,6 +612,60 @@ a.ccard:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -34px rgba(
 .js .img-wipe { clip-path: inset(0 0 100% 0); transition: clip-path 1.3s var(--ease) .1s; }
 .js .in .img-wipe, .js .img-wipe.in { clip-path: inset(0 0 0 0); }
 
+/* ------------------------------------------------ legibility & premium pass */
+:root { --muted: #434b61; }
+body { font-size: 17px; line-height: 1.65; }
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .2em; }
+h2 { font-size: clamp(42px, 5.6vw, 88px); }
+.lead { font-size: clamp(17px, 1.35vw, 20px); line-height: 1.7; }
+[data-theme="dark"] .lead { color: rgba(255, 255, 255, .84); }
+.btn { --bh: 56px; padding: 0 30px; font-size: 16px; }
+.btn-sm { --bh: 46px; padding: 0 22px; font-size: 15px; }
+.btn-red { background: linear-gradient(135deg, #ea1a2e 0%, #c40f22 55%, #8f0c1b 100%); box-shadow: 0 14px 34px -14px rgba(223, 16, 34, .75), inset 0 1px 0 rgba(255, 255, 255, .25), inset 0 -1px 0 rgba(0, 0, 0, .15); }
+.btn-ghost, .btn-glass { border-width: 1.5px; }
+.nav a { font-size: 15px; opacity: .92; padding: 10px 15px; }
+.hdr-phone { font-size: 15px; opacity: 1; }
+/* hero copy sits on a darker veil so it reads over the skyline */
+.j-shade { background: radial-gradient(120% 90% at 0% 45%, rgba(3, 6, 24, .78) 0%, rgba(3, 6, 24, .5) 38%, rgba(3, 6, 24, 0) 66%), linear-gradient(180deg, rgba(3, 8, 28, .4) 0%, rgba(3, 8, 28, 0) 24%); }
+.j-intro h1 { font-size: clamp(48px, 6.4vw, 100px); text-shadow: 0 4px 40px rgba(3, 6, 24, .45); }
+.j-sub { font-size: clamp(17px, 1.4vw, 20px); max-width: 560px; color: rgba(255, 255, 255, .94); text-shadow: 0 1px 18px rgba(3, 6, 24, .9); }
+.j-kicker { font-size: 13px; color: rgba(255, 255, 255, .88); }
+.j-label { font-size: 12px; letter-spacing: .18em; color: #fff; }
+.j-progress li { font-size: 12px; color: rgba(255, 255, 255, .6); }
+.j-ch h2 { text-shadow: 0 2px 30px rgba(3, 8, 28, .8); }
+.j-ch p { font-size: 18px; color: rgba(255, 255, 255, .92); text-shadow: 0 1px 16px rgba(3, 8, 28, .95); }
+.as-price span { font-size: 15px; color: rgba(255, 255, 255, .82); }
+.facts dt { font-size: 12px; color: rgba(255, 255, 255, .66); }
+.facts dd { font-size: 17px; }
+.facts-light dt { color: var(--muted); }
+.pcard h3, .pillar h3, .step h3 { font-size: 20px; }
+.pcard p { font-size: 16px; color: rgba(255, 255, 255, .78); }
+.pillar p, .step p, .vsteps p, .loc-points p, .lc-body p, .ocard p { font-size: 16px; }
+.doc p, .res p, .conn li, .pd-list li, .ccard span { font-size: 15.5px; }
+.chips li { font-size: 13.5px; padding: 8px 14px; }
+.proof-note { font-size: 13.5px; color: rgba(255, 255, 255, .6); }
+.ticks li { font-size: 16.5px; }
+.enq-contacts span { font-size: 16px; }
+.f > span, .f-wants legend { font-size: 12.5px; color: #3a4258; }
+.ft-brand p { font-size: 16px; color: rgba(255, 255, 255, .72); }
+.ft-col { font-size: 16px; }
+.ft-col h3 { font-size: 12px; color: rgba(255, 255, 255, .6); }
+.ft-legal { font-size: 13px; color: rgba(255, 255, 255, .55); }
+.lc-tag, .ocard-k { font-size: 12px; }
+
+/* cinematic project band on the home page */
+.life { position: relative; min-height: 94vh; display: flex; align-items: flex-end; padding: 160px 0 clamp(70px, 8vw, 110px); overflow: hidden; background: var(--ink); }
+.life-bg { position: absolute; left: 0; top: -10%; width: 100%; height: 120%; object-fit: cover; object-position: 50% 78%; will-change: transform; }
+.life::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(0deg, rgba(2, 6, 20, .94) 0%, rgba(2, 6, 20, .55) 42%, rgba(2, 6, 20, .1) 75%), linear-gradient(90deg, rgba(2, 6, 20, .55), rgba(2, 6, 20, 0) 60%); }
+.life-inner { position: relative; z-index: 2; width: 100%; }
+.life h2 { max-width: 860px; margin-bottom: 34px; }
+.life-row { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 28px; }
+.life-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 170px)); gap: 12px; }
+.life-strip figure { position: relative; margin: 0; aspect-ratio: 4 / 3; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, .18); }
+.life-strip img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
+.life-strip figure:hover img { transform: scale(1.08); }
+.life-strip figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 10px 8px; background: linear-gradient(0deg, rgba(2, 6, 20, .85), transparent); font: 500 12px/1.2 var(--ui); color: #fff; }
+
 /* ------------------------------------------------ responsive */
 @media (max-width: 1200px) {
   .hdr-phone span { display: none; }
@@ -708,6 +762,9 @@ a.ccard:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -34px rgba(
   .ahero-book { flex-direction: column; align-items: flex-start; }
   .ahb-price { border-right: 0; padding-right: 0; }
   .ft-top { grid-template-columns: 1fr; }
+  .life { min-height: 88vh; padding-top: 120px; }
+  .life-strip { grid-template-columns: repeat(2, 1fr); width: 100%; }
+  .btn { --bh: 52px; font-size: 15.5px; }
   .ft-bottom { flex-direction: column; }
   .faq p { padding-right: 0; }
 }
