@@ -18,7 +18,7 @@ ASSET_V = hashlib.md5(b"".join(open(os.path.join(OUT, "assets", f), "rb").read()
 SITE = {
     "name": "BiznorX Realty",
     "url": "https://biznorxrealty.com",      # TODO: confirm the new domain
-    "live": False,                           # False = noindex (preview). Set True at launch.
+    "live": True,                            # True = indexable by Google. False = noindex (preview).
     "phone": "+919004378003",
     "phone_display": "+91 90043 78003",
     "whatsapp": "919004378003",
@@ -38,7 +38,7 @@ AURA = {
     "area": "Kausa, Mumbra",
     "address": "Survey No. 110/1/A & 110/1/B, near Kalsekar Hospital & College, Kausa, Mumbra, Thane 400612",
     "booking": "₹50,000",                    # pre-launch EOI — fully refundable
-    "previous": "Universal",                 # developer's delivered project, as named by the client
+    "previous": "The Universe",              # developer's delivered project (confirmed by the client)
     "rera": "",                              # The Aura's MahaRERA project number — shown in the hero once added
 }
 
@@ -295,7 +295,7 @@ def proof(p, dark_id="proof"):
     return f'''<section class="proof" id="{dark_id}" data-theme="dark">
   <div class="wrap">
     <div class="proof-head">
-      <span class="eyebrow reveal">The {AURA['previous']} track record</span>
+      <span class="eyebrow reveal">{AURA['previous']} track record</span>
       <h2 class="reveal">Why The Aura is the launch to be <em>early</em> for.</h2>
       <p class="lead reveal">{AURA['developer']}’s last landmark, {AURA['previous']}, is delivered, lived in and one of the most successful projects the town has seen. Here’s what it meant for the people who bought in early.</p>
     </div>
